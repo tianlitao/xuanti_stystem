@@ -1,0 +1,11 @@
+<h1>上传文件</h1>
+<%= form_tag({action: :teacher_upload}, multipart: true) do %>
+    <%= file_field_tag 'upload'  %>
+    <%= text_area_tag 'id',params[:id],:style => 'display:none' %>
+    <button>上传</button>
+<% end %>
+
+<% for i in @picture_list %>
+    <%= i['name'] %>
+    <%= link_to '删除', delete_upload_path(:path => i['path']) %>
+<% end %>

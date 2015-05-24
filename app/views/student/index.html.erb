@@ -1,0 +1,24 @@
+<h1>已设课题</h1>
+<table>
+  <tr>
+    <th>
+      题目
+    </th>
+    <th>需求</th>
+    <th>老师</th>
+    <th>选题人</th>
+  </tr>
+  <%- @all_title.each do |p| %>
+      <tr>
+        <td>    <%= p.title %></td>
+        <td><%= p.demand %></td>
+        <td><%= p.teacher %></td>
+        <% if (p.user_id != nil) %>
+            <td><%=  p.user.name %></td>
+        <% else %>
+            <td><%= link_to '选题', choice_title_path(:id=>p.id) %></td>
+        <% end %>
+      </tr>
+
+  <% end %>
+</table>

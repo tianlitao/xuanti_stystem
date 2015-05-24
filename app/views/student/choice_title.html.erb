@@ -1,0 +1,8 @@
+<h1>选择题目</h1>
+<h3>题目</h3>
+<%= @title.title %>
+<h4>需求</h4>
+<%= @title.demand %>
+<h4>老师</h4>
+<%= @title.teacher %>
+<%= link_to '确认选择？选择后将无法修改，请确定' , confirm_title_path(:id=>@title.id) %>

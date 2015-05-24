@@ -1,0 +1,18 @@
+<h1>添加题目</h1>
+<div class="single-form-container">
+  <%= form_for @title do |f| %>
+      <div class="boxed-group">
+        <div class="boxed-group-inner">
+          <dl class="form">
+            <dt><%= f.label :title %></dt>
+            <dd><%= f.text_field :title %></dd>
+          </dl>
+          <dl class="form">
+            <dt> <%= f.label :demand %></dt>
+            <dd> <%= f.text_area :demand %> </dd>
+          </dl>
+          <p><%= f.submit "确定添加", :class => "button primary" %></p>
+        </div>
+      </div>
+  <% end %>
+</div>

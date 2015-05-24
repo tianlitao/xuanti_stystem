@@ -1,0 +1,21 @@
+<h1>已设课题</h1>
+<%= link_to 'add_title', add_title_path %>
+<table>
+  <tr>
+    <th>
+      题目
+    </th>
+    <th>需求</th>
+    <th>所属</th>
+    <th>查看完成情况</th>
+  </tr>
+  <%- @all_title.each do |p| %>
+      <tr>
+        <td>    <%= p.title %></td>
+        <td><%= p.demand %></td>
+        <td><%= p.user_id %></td>
+        <td><%= link_to '查看' ,check_path(:id => p.id) %></td>
+      </tr>
+
+  <% end %>
+</table>

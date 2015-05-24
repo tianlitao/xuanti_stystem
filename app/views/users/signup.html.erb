@@ -19,6 +19,10 @@
             <dt> <%= f.label :password_confirmation %> </dt>
             <dd> <%= f.password_field :password_confirmation %> </dd>
           </dl>
+          <dl class="form">
+            <dt> <%= f.label :role %> </dt>
+            <dd><%= f.select :role ,['学生','老师'] %></dd>
+          </dl>
           <p><%= f.submit "注册", :class => "button primary" %></p>
         </div>
       </div>

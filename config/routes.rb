@@ -1,18 +1,32 @@
 Rails.application.routes.draw do
 
 
+  get 'student/index'
+
+  get 'teacher/index'
+
   get 'users/welcome'
 
   get 'users/signup'
 
   get 'users/login'
+  get 'student/choice_title', :as => 'choice_title'
+  get 'student/confirm_title', :as => 'confirm_title'
+  get 'student/upload_design', :as => 'upload_design'
+  get 'student/delete_upload' , :as => 'delete_upload'
+  get 'users/message' ,:as => 'message'
+  get 'teacher/check' ,:as => 'check'
+  post 'upload' => 'student#upload'
+  post 'teacher_upload' => 'teacher#teacher_upload'
 
-  root to: "users#welcome"
+
+  get 'teacher/add_title' => 'teacher#add_title', :as => 'add_title'
+  root to: "users#login"
   get "login" => "users#login", :as => "login"
   get "signup" => "users#signup", :as => "signup"
   post "create_login_session" => "users#create_login_session"
   delete "logout" => "users#logout", :as => "logout"
-  resources :users, only: [:create]
+  resources :users, :designs, :messages, only: [:create]
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

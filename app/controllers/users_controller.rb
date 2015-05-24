@@ -2,6 +2,10 @@ class UsersController < ApplicationController
   def welcome
   end
 
+
+  def message
+    
+  end
   def signup
     @user = User.new
   end
@@ -23,11 +27,16 @@ class UsersController < ApplicationController
     cookies.delete(:token)
     redirect_to root_url
   end
+
   def create_login_session
     user = User.find_by_name(params[:name])
     if user && user.authenticate(params[:password])
       cookies.permanent[:token] = user.token
-      redirect_to root_url
+      if user.role == '老师'
+        redirect_to '/teacher/index'
+      else
+        redirect_to '/student/index'
+      end
     else
       redirect_to :login
     end

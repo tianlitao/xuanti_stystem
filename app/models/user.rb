@@ -1,4 +1,5 @@
 class User < ActiveRecord::Base
+  has_many :designs
   has_secure_password
   before_create { generate_token(:token) }
 
