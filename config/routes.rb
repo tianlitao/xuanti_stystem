@@ -19,6 +19,7 @@ Rails.application.routes.draw do
   get 'student/confirm_title', :as => 'confirm_title'
   get 'student/upload_design', :as => 'upload_design'
   get 'student/delete_upload' , :as => 'delete_upload'
+  get 'users/download', :as => 'download'
   get 'student/message' ,:as => 'message'
   get 'teacher/check' ,:as => 'check'
   post 'upload' => 'student#upload'

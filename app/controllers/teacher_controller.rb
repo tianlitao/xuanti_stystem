@@ -1,4 +1,11 @@
 class TeacherController < ApplicationController
+  before_action :judge_role
+  # skip_before_action :judge_role, only: [:login, :logout ,:signup,:create_login_session]
+  def judge_role
+    if current_user.role == '学生'
+      redirect_to :root
+    end
+  end
   def index
     @all_title = Design.where(:teacher => current_user.id)
   end

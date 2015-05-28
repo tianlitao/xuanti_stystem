@@ -7,5 +7,6 @@
 
 <% for i in @picture_list %>
     <%= i['name'] %>
+    <%= link_to '下载' , download_path(:path => i['path'],:name=>i['name'])  %>
     <%= link_to '删除', delete_upload_path(:path => i['path']) %>
 <% end %>

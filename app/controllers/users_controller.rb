@@ -1,11 +1,5 @@
 class UsersController < ApplicationController
-  before_action :judge_role
-  skip_before_action :judge_role, only: [:login, :logout ,:signup,:create_login_session]
-  def judge_role
-    if current_user.role == '学生'
-      redirect_to :root
-    end
-  end
+
   def welcome
   end
 
@@ -46,6 +40,11 @@ class UsersController < ApplicationController
     end
   end
 
+  def download
+    io = File.open(params[:path])
+    io.binmode
+    send_data(io.read, :filename => params[:name], :disposition => 'attachment')
+  end
 
   private
   def user_params
