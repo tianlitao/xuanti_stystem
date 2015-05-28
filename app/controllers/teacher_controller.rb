@@ -7,6 +7,14 @@ class TeacherController < ApplicationController
     @title = Design.new
   end
 
+  def message
+    @message = Message.where(:to=>current_user.id)
+  end
+
+  def send_message
+    @message = Message.new
+  end
+
   def check
     list = []
     if (File.exist?('public/upload/'+ Design.find_by_id(params[:id]).user_id.to_s))

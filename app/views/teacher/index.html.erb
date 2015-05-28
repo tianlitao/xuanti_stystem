@@ -8,13 +8,18 @@
     <th>需求</th>
     <th>所属</th>
     <th>查看完成情况</th>
+    <th>发送站内信</th>
   </tr>
   <%- @all_title.each do |p| %>
       <tr>
         <td>    <%= p.title %></td>
         <td><%= p.demand %></td>
         <td><%= p.user_id %></td>
-        <td><%= link_to '查看' ,check_path(:id => p.id) %></td>
+        <% if p.user_id == nil %>
+        <% else %>
+            <td><%= link_to '查看', check_path(:id => p.id) %></td>
+            <td><%= link_to '发送', teacher_send_message_path(:id => p.user_id) %></td>
+        <% end %>
       </tr>
 
   <% end %>

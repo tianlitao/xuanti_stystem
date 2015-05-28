@@ -1,0 +1,6 @@
+<h1>收到站内信</h1>
+
+<%- @message.each do |p| %>
+    <p><%= p.messages %> <%= link_to '回信' ,teacher_send_message_path(:id=>p.from) %></p>
+
+<% end %>

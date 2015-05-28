@@ -9,16 +9,21 @@ Rails.application.routes.draw do
 
   get 'users/signup'
 
+  get 'teacher/message'
+  get 'teacher/send_message'
+  get 'student/send_teacher' ,:as => 'send_teacher'
   get 'users/login'
+  get 'student/message_student' ,:as => 'message_student'
+
   get 'student/choice_title', :as => 'choice_title'
   get 'student/confirm_title', :as => 'confirm_title'
   get 'student/upload_design', :as => 'upload_design'
   get 'student/delete_upload' , :as => 'delete_upload'
-  get 'users/message' ,:as => 'message'
+  get 'student/message' ,:as => 'message'
   get 'teacher/check' ,:as => 'check'
   post 'upload' => 'student#upload'
   post 'teacher_upload' => 'teacher#teacher_upload'
-
+  post '/student/message_student' => 'student#message_student'
 
   get 'teacher/add_title' => 'teacher#add_title', :as => 'add_title'
   root to: "users#login"

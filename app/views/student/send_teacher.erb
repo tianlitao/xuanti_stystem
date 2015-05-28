@@ -1,0 +1,15 @@
+<h1>发送站内信</h1>
+<div class="single-form-container">
+  <%= form_for @message, url: message_student_path do |f| %>
+      <div class="boxed-group">
+        <div class="boxed-group-inner">
+          <dl class="form">
+            <dt><%= f.label :message %></dt>
+            <dd><%= f.text_area :messages  %></dd>
+            <dd><%= f.text_field :to ,:value => @teacher ,:style => 'display:none' %></dd>
+          </dl>
+          <p><%= f.submit "确定发送", :class => "button primary" %></p>
+        </div>
+      </div>
+  <% end %>
+</div>
