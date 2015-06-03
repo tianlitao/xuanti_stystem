@@ -1,13 +1,13 @@
-<h1>上传文件</h1>
+<div class="landing"><h1>上传文件</h1></div>
 
-<%= link_to '向老师发送站内信' ,send_teacher_path  %>
-<%= form_tag({action: :upload}, multipart: true) do %>
+<div class="stand_inside_letter"><%= link_to '向老师发送站内信' ,send_teacher_path  %></div>
+<div class="upload"><%= form_tag({action: :upload}, multipart: true) do %>
 <%= file_field_tag 'upload'  %>
 <button>上传</button>
-<% end %>
+<% end %></div>
 
-<% for i in @picture_list %>
+<div class="paper_download"><% for i in @picture_list %>
 <%= i['name'] %>
     <%= link_to '下载' , download_path(:path => i['path'],:name=>i['name'])  %>
     <%= link_to '删除', delete_upload_path(:path => i['pa th']) %>
-<% end %>
+<% end %></div>

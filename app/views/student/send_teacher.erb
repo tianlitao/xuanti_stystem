@@ -8,7 +8,7 @@
             <dd><%= f.text_area :messages  %></dd>
             <dd><%= f.text_field :to ,:value => @teacher ,:style => 'display:none' %></dd>
           </dl>
-          <p><%= f.submit "确定发送", :class => "button primary" %></p>
+          <p class="stand_inside_letter_send"><%= f.submit "确定发送", :class => "button primary" %></p>
         </div>
       </div>
   <% end %>

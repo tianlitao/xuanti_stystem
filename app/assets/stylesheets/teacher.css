@@ -1,0 +1,22 @@
+.add_title{
+    margin-left: 10%;
+    margin-top: 30px;
+    font-size: 30px;
+    text-decoration: none;
+}
+.teacher_page_head{
+    text-align: center;
+    letter-spacing: 50px;
+    margin-top: 50px;
+    font-size: 2vw;
+}
+.topic{
+    margin-left: 10%;
+}
+.topic tr th{
+    width: 200px;
+}
+.add_subject{
+    margin-left: 30%;
+    margin-top: 30px;
+}

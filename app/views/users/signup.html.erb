@@ -1,7 +1,7 @@
 <div class="single-form-container">
   <%= form_for @user do |f| %>
       <div class="boxed-group">
-        <h3>注册</h3>
+        <div class="landing"><h1>注册</h1></div>
         <div class="boxed-group-inner">
           <dl class="form">
             <dt><%= f.label :name %></dt>
@@ -23,7 +23,7 @@
             <dt> <%= f.label :role %> </dt>
             <dd><%= f.select :role ,['学生','老师'] %></dd>
           </dl>
-          <p><%= f.submit "注册", :class => "button primary" %></p>
+          <p class="landing_bnt"><%= f.submit "注册", :class => "button primary" %></p>
         </div>
       </div>
   <% end %>

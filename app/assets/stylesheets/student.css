@@ -1,0 +1,92 @@
+.landing{
+    text-align: center;
+    letter-spacing: 50px;
+    margin-top: 100px;
+    font-size: 2vw;
+}
+.form{
+    margin-left: 38%;
+}
+.landing_bnt{
+    margin-left: 48%;
+    margin-top: 30px;
+}
+.user_name_box{
+    margin-left: 100px;
+}
+
+.header{
+    width: 100%;
+
+}
+.container {
+    margin: 0 auto;
+    padding: 0 ;
+    height: 50px;
+    background-color: rgb(35, 35, 35);
+}
+ul li{
+    display: inline;
+    padding-left:10%;
+}
+ul li a{
+    font-size: 2vw;
+    color:cadetblue;
+    text-decoration:none;
+}
+ul li a:hover{
+    background:black;
+}
+.header-logo-wordmark{
+    float: left;
+    font-size: 2vw;
+    color: cadetblue;
+    text-decoration: none;
+}
+.topic{
+    margin-left: 10%;
+}
+.topic td,.topic
+{
+    text-align: center;
+    font-size:20px;
+    border:0px solid #000000;
+}
+#a{
+    width: 200px;
+}
+#b{
+    width: 300px;
+}
+#c{
+    width: 200px;
+}
+#d{
+    width: 200px;
+}
+.choose_topic{
+    margin-left: 30%;
+}
+.stand_inside_letter{
+    margin-left: 30%;
+    font-size: 30px;
+}
+.stand_inside_letter a{
+    text-decoration: none;
+}
+.upload{
+    margin-left: 30%;
+    margin-top: 20px;
+    font-size: 30px;
+}
+.stand_inside_letter_send{
+    margin-left: 50%;
+}
+.paper_download{
+    margin-left: 30%;
+    margin-top: 50px;
+}
+img{
+    width: 100%;
+    height: 100%;
+}

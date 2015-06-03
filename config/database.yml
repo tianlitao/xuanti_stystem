@@ -10,9 +10,9 @@ default: &default
   database: xuanti
   pool: 5
   username: root
-  socket: /private/tmp/mysql.sock
+ # socket: /private/tmp/mysql.sock
 #  password: 3a94f2b2
-#  socket: /var/run/mysqld/mysqld.sock
+  socket: /var/run/mysqld/mysqld.sock
 development:
   <<: *default
   database: xuanti

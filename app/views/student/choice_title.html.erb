@@ -1,8 +1,9 @@
-<h1>选择题目</h1>
-<h3>题目</h3>
+<div class="landing"><h1>选择题目</h1></div>
+<div class="choose_topic"><h3>题目</h3>
 <%= @title.title %>
 <h4>需求</h4>
 <%= @title.demand %>
 <h4>老师</h4>
 <%= User.find_by_id(@title.teacher.to_i).name %>
 <%= link_to '确认选择？选择后将无法修改，请确定' , confirm_title_path(:id=>@title.id) %>
+</div>

@@ -1,13 +1,16 @@
+
 <div class="single-form-container">
   <div class="boxed-group" id="login">
-    <h3>登录</h3>
+     <div class="landing">
+      <h1>登录</h1>
+     </div>
     <div class="boxed-group-inner">
       <%= form_tag "/create_login_session" do %>
           <dl class="form">
             <dt>
               <%= label_tag "用户名" %>
             </dt>
-            <dd>
+            <dd class="user_name_box">
               <%= text_field_tag :name, params[:name] %>
             </dd>
           </dl>
@@ -15,11 +18,11 @@
             <dt>
               <%= label_tag "密码" %>
             </dt>
-            <dd>
+            <dd class="user_name_box">
               <%= password_field_tag :password, params[:password] %>
             </dd>
           </dl>
-          <p> <%= submit_tag "登录", :class => "button primary" %> </p>
+          <p class="landing_bnt"> <%= submit_tag "登录", :class => "button primary" %> </p>
       <% end %>
     </div>
   </div>
