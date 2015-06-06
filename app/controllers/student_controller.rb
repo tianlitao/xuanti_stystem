@@ -1,5 +1,5 @@
 class StudentController < ApplicationController
-  before_action :judge_role
+  before_action :judge_role , except: [:delete_upload]
   require 'find'
   def judge_role
     if current_user.role == '老师'
@@ -7,6 +7,9 @@ class StudentController < ApplicationController
     end
   end
 
+  def get_score
+  @score = Design.find_by_user_id(current_user.id)
+  end
   def index
     if Design.find_by_user_id(current_user.id)
       redirect_to '/student/upload_design'

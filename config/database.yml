@@ -5,14 +5,14 @@
 #   gem 'sqlite3'
 #
 default: &default
-  adapter: mysql2
-  encoding: utf8
-  database: xuanti
-  pool: 5
-  username: root
- # socket: /private/tmp/mysql.sock
+    adapter: mysql2
+    encoding: utf8
+    database: xuanti
+    pool: 5
+    username: root
+    socket: /private/tmp/mysql.sock
 #  password: 3a94f2b2
-  socket: /var/run/mysqld/mysqld.sock
+#  socket: /var/run/mysqld/mysqld.sock
 development:
   <<: *default
   database: xuanti

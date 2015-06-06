@@ -4,23 +4,23 @@
         <div class="landing"><h1>注册</h1></div>
         <div class="boxed-group-inner">
           <dl class="form">
-            <dt><%= f.label :name %></dt>
+            <dt><%= f.label :姓名 %></dt>
             <dd><%= f.text_field :name %></dd>
           </dl>
           <dl class="form">
-            <dt> <%= f.label :student_num %></dt>
+            <dt> <%= f.label :学号 %></dt>
             <dd> <%= f.text_field :student_num %> </dd>
           </dl>
           <dl class="form">
-            <dt> <%= f.label :password %> </dt>
+            <dt> <%= f.label :密码 %> </dt>
             <dd> <%= f.password_field :password %> </dd>
           </dl>
           <dl class="form">
-            <dt> <%= f.label :password_confirmation %> </dt>
+            <dt> <%= f.label :确认密码 %> </dt>
             <dd> <%= f.password_field :password_confirmation %> </dd>
           </dl>
           <dl class="form">
-            <dt> <%= f.label :role %> </dt>
+            <dt> <%= f.label :角色 %> </dt>
             <dd><%= f.select :role ,['学生','老师'] %></dd>
           </dl>
           <p class="landing_bnt"><%= f.submit "注册", :class => "button primary" %></p>

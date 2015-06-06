@@ -1,5 +1,5 @@
 <div class="landing"><h1>上传文件</h1></div>
-
+<div class="stand_inside_letter"><%= link_to '查看成绩' ,get_score_path  %></div>
 <div class="stand_inside_letter"><%= link_to '向老师发送站内信' ,send_teacher_path  %></div>
 <div class="upload"><%= form_tag({action: :upload}, multipart: true) do %>
 <%= file_field_tag 'upload'  %>

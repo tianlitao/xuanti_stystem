@@ -1,0 +1,20 @@
+<div class="teacher_page_head"><h1>已设课题</h1></div>
+
+<table class="topic">
+  <tr>
+    <th>题目</th>
+    <th>学生名称</th>
+    <th>成绩</th>
+    <th></th>
+  </tr>
+      <tr>
+        <td>    <%= @score.title %></td>
+        <td><%= @score.user.name %></td>
+        <td><input id="score" maxlength=2 onkeypress="var k=event.keyCode; return k>=48&&k<=57"
+                   onpaste="return !clipboardData.getData('text').match(/\D/)"
+                   ondragenter="return false"></td>
+        <td><button onclick="score()">确定</button></td>
+      </tr>
+<input id="id" value= <%= @score.id %> style="display:none" >
+</table>
+

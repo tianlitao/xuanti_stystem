@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
 
 
+  get 'admin/index'
+
   get 'student/index'
 
   get 'teacher/index'
@@ -22,7 +24,15 @@ Rails.application.routes.draw do
   get 'users/download', :as => 'download'
   get 'student/message' ,:as => 'message'
   get 'teacher/check' ,:as => 'check'
+  get 'teacher/delete', :as => 'delete'
+  get 'teacher/modify', :as => 'modify'
+  get 'teacher/score', :as => 'score'
+  get '/teacher/modify_score'
+  get 'student/get_score',:as => 'get_score'
+  get 'teacher/score_eva'  , :as => 'score_eva'
+  patch 'teacher/design_update' => 'teacher#design_update',:as => 'design'
   post 'upload' => 'student#upload'
+
   post 'teacher_upload' => 'teacher#teacher_upload'
   post '/student/message_student' => 'student#message_student'
 

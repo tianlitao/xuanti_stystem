@@ -1,0 +1,29 @@
+<div class="teacher_page_head"><h1>已设课题</h1></div>
+
+<table class="topic">
+  <tr>
+    <th>题目</th>
+    <th>学生名称</th>
+    <th>成绩评定</th>
+  </tr>
+  <%- @all_title.each do |p| %>
+      <tr>
+
+        <% if p.user_id == nil %>
+            <td></td>
+            <td></td>
+        <% else %>
+            <td>    <%= p.title %></td>
+            <td><%= p.user.name %></td>
+        <% end %>
+        <% if p.score == nil %>
+            <td><%= link_to '成绩评定', score_path(:id => p.id) %></td>
+
+        <% else %>
+            <td><%= p.score %></td>
+
+        <% end %>
+      </tr>
+
+  <% end %>
+</table>

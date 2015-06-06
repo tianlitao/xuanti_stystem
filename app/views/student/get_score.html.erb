@@ -1,0 +1,16 @@
+<div class="teacher_page_head"><h1>成绩</h1></div>
+
+<table class="topic">
+  <tr>
+    <th>题目</th>
+    <th>老师</th>
+    <th>成绩</th>
+    <th></th>
+  </tr>
+  <tr>
+    <td>    <%= @score.title %></td>
+    <td><%= User.find_by_id(@score.teacher.to_i).name %></td>
+    <td><%= @score.score %></td>
+  </tr>
+</table>
+

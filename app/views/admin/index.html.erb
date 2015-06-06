@@ -1,0 +1,27 @@
+<div class="teacher_page_head"><h1>已设课题</h1></div>
+<table class="topic">
+  <tr>
+    <th>
+      题目
+    </th>
+    <th>需求</th>
+    <th>老师</th>
+    <th>学生</th>
+    <th>删除课题</th>
+  </tr>
+  <%- @all_title.each do |p| %>
+      <tr>
+        <td>    <%= p.title %></td>
+        <td><%= p.demand %></td>
+        <td><%= User.find_by_id(p.teacher.to_i).name %></td>
+        <% if p.user_id == nil %>
+            <td></td>
+
+        <% else %>
+            <td><%= p.user.name %></td>
+        <% end %>
+        <td><%= link_to '删除', delete_path(:id => p.id) %></td>
+      </tr>
+
+  <% end %>
+</table>

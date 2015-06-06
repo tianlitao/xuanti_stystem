@@ -14,7 +14,7 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
     if @user.save
-      cookies.permanent[:token] = @user.token
+      # cookies.permanent[:token] = @user.token
       redirect_to :root
     else
       render :signup
@@ -33,7 +33,11 @@ class UsersController < ApplicationController
       if user.role == '老师'
         redirect_to '/teacher/index'
       else
-        redirect_to '/student/index'
+        if user.role == '学生'
+          redirect_to '/student/index'
+        else
+          redirect_to '/admin/index'
+        end
       end
     else
       redirect_to :login

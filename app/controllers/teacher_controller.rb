@@ -6,8 +6,37 @@ class TeacherController < ApplicationController
       redirect_to :root
     end
   end
+  def score
+  @score = Design.find_by_id(params[:id])
+  end
+  def modify_score
+    @score = Design.find_by_id(params[:id])
+    @score.score = params[:score]
+    @score.save
+    redirect_to '/teacher/score_eva'
+  end
+  def score_eva
+    @all_title = Design.where(:teacher => current_user.id)
+  end
   def index
     @all_title = Design.where(:teacher => current_user.id)
+  end
+
+  def modify
+  @title = Design.find_by_id(params[:id])
+  end
+
+  def design_update
+    @title = Design.find_by_id(params[:format])
+    @title.title = params['design']['title']
+    @title.demand = params['design']['demand']
+    @title.save
+    redirect_to '/teacher/index'
+  end
+
+  def delete
+    Design.find_by_id(params[:id]).delete
+    redirect_to :back
   end
 
   def add_title
@@ -15,7 +44,7 @@ class TeacherController < ApplicationController
   end
 
   def message
-    @message = Message.where(:to=>current_user.id)
+    @message = Message.where(:to => current_user.id)
   end
 
   def send_message
