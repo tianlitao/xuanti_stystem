@@ -14,9 +14,10 @@
       <tr>
         <td>    <%= p.title %></td>
         <td><%= p.demand %></td>
-        <td><%= p.user.name %></td>
+
         <% if p.user_id == nil %>
         <% else %>
+            <td><%= p.user.name %></td>
             <td><%= link_to '查看', check_path(:id => p.id) %></td>
             <td><%= link_to '发送', teacher_send_message_path(:id => p.user_id) %></td>
         <% end %>
